@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CoommU HTML Client</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Contacts</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- commu ui here -->
+        <table class="table table-striped" ng-app="myApp" ng-controller="contactListCtrl">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Owner</th>
+                    <th>Description</th>
+                    <th>Is it Awesome?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="con in contacts">
+                    <td>{{con.Id}}</td>
+                    <td>{{con.owner</td>
+                    <td>{{con.description}}</td>
+                    <td>{{con.isAwesome}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Create a new Vehicle</th>
+                    <th colspan="2">API Status: {{status}}</th>
+                    <th><button class="btn btn-sm btn-info" ng-click="refresh()">Refresh</button></th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="ID" ng-model="newId" /></td>
+                    <td><input type="text" placeholder="Owner" ng-model="Owner" /></td>
+                    <td><input type="text" placeholder="Description" ng-model="description" /></td>
+                    <td><input type="checkbox" placeholder="Is it Awesome?" ng-model="isAwesome" /></td>
+                    <td><button class="btn btn-sm btn-success" ng-click="create()">Create</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /* client javascript code here */
+    </script>
+
+</body>
+</html>

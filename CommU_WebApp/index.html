@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CoommU HTML Client</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Vehicles</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- commu ui here -->
+        <table class="table table-striped" ng-app="myApp" ng-controller="vehicleListCtrl">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Owner</th>
+                    <th>Description</th>
+                    <th>Is it Awesome?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="veh in vehicles">
+                    <td>{{ veh.Id }}</td>
+                    <td>{{ veh.Owner }}</td>
+                    <td>{{ veh.Description }}</td>
+                    <td>{{ veh.IsAwesome }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Create a new Vehicle</th>
+                    <th colspan="2">API Status: {{status}}</th>
+                    <th><button class="btn btn-sm btn-info" ng-click="refresh()">Refresh</button></th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="ID" ng-model="newId" /></td>
+                    <td><input type="text" placeholder="Owner" ng-model="Owner" /></td>
+                    <td><input type="text" placeholder="Description" ng-model="description" /></td>
+                    <td><input type="checkbox" placeholder="Is it Awesome?" ng-model="isAwesome" /></td>
+                    <td><button class="btn btn-sm btn-success" ng-click="create()">Create</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /* client javascript code here */
+        angular.module('myApp', []).controller('vehicleListCtrl', function ($scope, $http) {
+            $scope.baseUrl = 'https://microsoft-apiapp2618952271ed4ca0ae7d70972e1b8a89.azurewebsites.net/';
+
+            $scope.refresh = function () {a
+                $scope.status = "Refreshing Contacts...z";
+                $http({
+                    method: 'GET',
+                    url: $scope.baseUrl + '/api/vehicles',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).success(function (data) {
+                    $scope.vehicles = data;
+                    $scope.status = "Vehicles loaded";
+                }).error(function (data, status) {
+                    $scope.status = "Error loading vehicles";
+                });
+            };
+
+            $scope.create = function () {
+                $scope.status = "Creating a new vehicle";
+
+                $http({
+                    method: 'POST',
+                    url: $scope.baseUrl + '/api/vehicle',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    data: {
+                        'Id': $scope.newId,
+                        'Description': $scope.newDescription,
+                        'Owner': $scope.newOwner,
+                        'IsAwesome': $scope.newIsAwesome
+                    }
+                }).success(function (data) {
+                    $scope.status = "Vehicle created";
+                    $scope.refresh();
+                    $scope.newId = 0;
+                    $scope.newDescription = '';
+                    $scope.newOwner = '';
+                    $scope.newIsAwesome = 0;
+                });
+            };
+
+            $scope.refresh();
+        });
+    </script>
+
+</body>
+</html>
