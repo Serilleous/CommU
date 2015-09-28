@@ -37,6 +37,7 @@
                     <th>Owner</th>
                     <th>Description</th>
                     <th>Is it Awesome?</th>
+                    <th>The thing</th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,6 +47,7 @@
                     <td>{{ veh.Owner }}</td>
                     <td>{{ veh.Description }}</td>
                     <td>{{ veh.IsAwesome }}</td>
+                    <td>{{ vehicles.TheThing }}</td>
                     <td></td>
                 </tr>
             </tbody>
@@ -72,7 +74,7 @@
         angular.module('myApp', []).controller('vehicleListCtrl', function ($scope, $http) {
             $scope.baseUrl = 'https://microsoft-apiapp2618952271ed4ca0ae7d70972e1b8a89.azurewebsites.net/';
 
-            $scope.refresh = function () {a
+            $scope.refresh = function () {
                 $scope.status = "Refreshing Contacts...z";
                 $http({
                     method: 'GET',

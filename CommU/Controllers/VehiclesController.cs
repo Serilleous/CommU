@@ -15,6 +15,9 @@ namespace CommU.Controllers
         [HttpGet]
         public IEnumerable<Vehicle> Get()
         {
+            CommU_DAL.Program theThing = new CommU_DAL.Program();
+            theThing.newThing();
+
             return new Vehicle[]
             {
                 new Vehicle { Id = 1, Description = "redish", Owner = "some old broad", IsAwesome = true },
@@ -28,6 +31,5 @@ namespace CommU.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.Accepted);
         }
-
     }
 }
