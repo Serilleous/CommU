@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommU_WebApp", "CommU_WebAp
 		{659FF5D4-4262-4725-BD2C-D315A21D9A11} = {659FF5D4-4262-4725-BD2C-D315A21D9A11}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommU_DAL", "CommU_DAL\CommU_DAL.csproj", "{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommU_API_DAL", "CommU_DAL\CommU_API_DAL.csproj", "{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{7CA82B33-F04E-47F2-B3FC-5D9C7A2BBD06}"
 EndProject
@@ -28,19 +28,27 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Local|Any CPU = Local|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Local|Any CPU.Build.0 = Local|Any CPU
 		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{659FF5D4-4262-4725-BD2C-D315A21D9A11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Local|Any CPU.Build.0 = Local|Any CPU
 		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C3DDD22-F92B-4D4C-8E96-F020F79B1183}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Local|Any CPU.Build.0 = Local|Any CPU
+		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Local|Any CPU.Deploy.0 = Local|Any CPU
 		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37AC088B-E5B6-4366-A1DB-0CA27D585D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
