@@ -73,7 +73,7 @@
         /* client javascript code here */
         angular.module('myApp', []).controller('vehicleListCtrl', function ($scope, $http) {
             $scope.baseUrl = 'https://microsoft-apiapp2618952271ed4ca0ae7d70972e1b8a89.azurewebsites.net/';
-
+            //$scope.baseUrl = 'http://localhost:55676/';
             $scope.refresh = function () {
                 $scope.status = "Refreshing Contacts...z";
                 $http({

@@ -15,8 +15,6 @@ namespace CommU.Controllers
         [HttpGet]
         public IEnumerable<Vehicle> Get()
         {
-            CommU_DAL.Program theThing = new CommU_DAL.Program();
-            theThing.newThing();
 
             return new Vehicle[]
             {
