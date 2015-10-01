@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>CoommU HTML Client</title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/Bootstrap/Content/bootstrap.css" rel="stylesheet" />
     <style type="text/css">
         body {
             margin-top: 60px;
@@ -55,7 +55,7 @@
                 <tr>
                     <th>Create a new Vehicle</th>
                     <th colspan="2">API Status: {{status}}</th>
-                    <th><button class="btn btn-sm btn-info" ng-click="refresh()">Refresh</button></th>
+                    <th><button class="btn btn-sm btn-info glyphicon glyphicon-refresh ng-click="refresh()"/></th>
                 </tr>
                 <tr>
                     <td><input type="text" placeholder="ID" ng-model="newId" /></td>
@@ -72,8 +72,8 @@
     <script type="text/javascript">
         /* client javascript code here */
         angular.module('myApp', []).controller('vehicleListCtrl', function ($scope, $http) {
-            $scope.baseUrl = 'https://microsoft-apiapp2618952271ed4ca0ae7d70972e1b8a89.azurewebsites.net/';
-            //$scope.baseUrl = 'http://localhost:55676/';
+            //$scope.baseUrl = 'https://microsoft-apiapp2618952271ed4ca0ae7d70972e1b8a89.azurewebsites.net/';
+            $scope.baseUrl = 'http://localhost:55676/';
             $scope.refresh = function () {
                 $scope.status = "Refreshing Contacts...z";
                 $http({
